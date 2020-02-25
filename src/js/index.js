@@ -1,7 +1,9 @@
 // Global app controller
 
-import num from './test'; // num will be the 23 exported from test.js. When importing from a module, you don't need the file extension.
+// import str from './models/Search';
 
-const x = 23;
+// // import { add as a, multiply as m, ID } from './views/searchView'
 
-console.log(`I imported ${num} from another module called test.js! Variable x is ${x}`);
+// import * as searchView from './views/searchView' // the * is everything
+
+// console.log(`Using imported functions! ${searchView.add(searchView.ID, 2)} and ${searchView.multiply(searchView.ID, 2)}. On, and here you go: ${str}.`)
