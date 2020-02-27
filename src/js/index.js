@@ -9,7 +9,7 @@
 // console.log(`Using imported functions! ${searchView.add(searchView.ID, 2)} and ${searchView.multiply(searchView.ID, 2)}. On, and here you go: ${str}.`)
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements } from './views/base'
+import { elements, renderLoader, clearLoader } from './views/base'
 
 /* ****** Globa state of the app
 * - Search object
@@ -30,12 +30,14 @@ const controlSearch = async () => {
 
         // 3. Prepare UI for results
         searchView.clearInput();
+        renderLoader(elements.searchRes);
         searchView.clearResults();
 
         // 4. Search for recipes
         await state.search.getResults(); // returns a promise
 
         // 5. Render results on UI
+        clearLoader();
         searchView.renderResults(state.search.result);
 
     }
